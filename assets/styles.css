@@ -322,7 +322,7 @@ a:hover {
 }
 
 .weekly-line {
-  stroke: #8b3a3a;
+  stroke: #355c7d;
 }
 
 circle {
@@ -335,12 +335,12 @@ circle {
 
 .weekly-event-point {
   fill: #fff8f0;
-  stroke: #8b3a3a;
+  stroke: #355c7d;
   stroke-width: 2.5;
 }
 
 .event-line {
-  stroke: rgba(139, 58, 58, 0.24);
+  stroke: rgba(53, 92, 125, 0.24);
   stroke-dasharray: 3 5;
 }
 
