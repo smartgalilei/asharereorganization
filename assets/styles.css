@@ -321,11 +321,27 @@ a:hover {
   stroke-linejoin: round;
 }
 
+.weekly-line {
+  stroke: #355c7d;
+}
+
 circle {
   fill: #fff;
   stroke: var(--accent);
   stroke-width: 2;
   cursor: pointer;
+  pointer-events: all;
+}
+
+.weekly-event-point {
+  fill: #fff8f0;
+  stroke: #355c7d;
+  stroke-width: 2.5;
+}
+
+.event-line {
+  stroke: rgba(53, 92, 125, 0.22);
+  stroke-dasharray: 3 5;
 }
 
 .chart-tooltip {
@@ -341,6 +357,7 @@ circle {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
   pointer-events: none;
   opacity: 0;
+  white-space: pre-line;
   transform: translateY(4px);
   transition: opacity 120ms ease, transform 120ms ease;
 }

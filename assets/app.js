@@ -84,14 +84,23 @@ function moveTooltip(event) {
 }
 
 for (const point of points) {
-  point.addEventListener("mouseenter", (event) => {
+  const showTooltip = (event) => {
     if (!tooltip) return;
     tooltip.textContent = point.dataset.tooltip || "";
     tooltip.classList.add("is-visible");
-    moveTooltip(event);
-  });
-  point.addEventListener("mousemove", moveTooltip);
-  point.addEventListener("mouseleave", () => {
+    if (event?.clientX !== undefined && event?.clientY !== undefined) {
+      moveTooltip(event);
+    }
+  };
+  const hideTooltip = () => {
     tooltip?.classList.remove("is-visible");
-  });
+  };
+  point.addEventListener("mouseenter", showTooltip);
+  point.addEventListener("mousemove", moveTooltip);
+  point.addEventListener("mouseleave", hideTooltip);
+  point.addEventListener("pointerenter", showTooltip);
+  point.addEventListener("pointermove", moveTooltip);
+  point.addEventListener("pointerleave", hideTooltip);
+  point.addEventListener("focus", showTooltip);
+  point.addEventListener("blur", hideTooltip);
 }
