@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A股破产重整公告与股价追踪</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="index-page">
+  <div class="page-shell">
+    <header class="index-hero">
+      <div>
+        <p class="eyebrow">A股破产/重整/清算公告追踪</p>
+        <h1>公司列表与公告后股价表现</h1>
+        <p class="hero-note">首页口径中的“最新股价”按最近一个完整交易日收盘价展示；当前批次最新完整交易日为 2026-05-14。</p>
+      </div>
+      <div class="hero-actions">
+        <input id="companySearch" type="search" placeholder="搜索公司名称或代码" />
+        <select id="statusFilter">
+          <option value="全部">全部状态</option>
+          <option value="已退市">已退市</option>
+          <option value="重整完成">重整完成</option>
+          <option value="未重整完成">未重整完成</option>
+        </select>
+        <select id="sortBy">
+          <option value="status">按状态排序（未完成→完成→退市）</option>
+          <option value="latestDesc">按最新股价从高到低</option>
+          <option value="latestAsc">按最新股价从低到高</option>
+          <option value="firstDesc">按首次公告后次日收盘价从高到低</option>
+          <option value="completionDesc">按完成后涨跌幅从高到低</option>
+          <option value="completionAsc">按完成后涨跌幅从低到高</option>
+          <option value="codeAsc">按证券代码升序</option>
+          <option value="nameAsc">按公司名称升序</option>
+        </select>
+        <label class="toggle-line"><input id="hasCompletionOnly" type="checkbox" /> 仅看已识别完成信号的公司</label>
+      </div>
+    </header>
+
+    <section class="summary-bar">
+      <div class="summary-pill"><strong>60</strong><span>公司总数</span></div>
+      <div class="summary-pill"><strong>33</strong><span>重整完成</span></div>
+      <div class="summary-pill"><strong>20</strong><span>未重整完成</span></div>
+      <div class="summary-pill"><strong>7</strong><span>已退市</span></div>
+    </section>
+
+    <section class="info-card table-card">
+      <div class="card-head">
+        <h2>公司首页</h2>
+        <span class="subnote">当前状态按更广的“重整完成信号”口径识别；完成价格列优先展示最近一次执行完成/完毕类公告后的次日收盘价。</span>
+      </div>
+      <p class="table-meta" id="tableMeta">当前显示 60 / 60 家公司</p>
+      <div class="table-wrap">
+        <table id="companyTable">
+          <thead>
+            <tr>
+              <th>公司</th>
+              <th>当前状态</th>
+              <th>最新股价</th>
+              <th>首次相关公告后一个交易日收盘价</th>
+              <th>重整完成信号公告后一个交易日收盘价</th>
+              <th>相对首次公告后次日变化</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr
+          data-company="ST金鸿"
+          data-code="000669"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="4.2"
+          data-first-close="3.23"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2026-02-10"
+        >
+          <td><a class="company-link" href="companies/000669_ST金鸿.html">ST金鸿</a><span class="subcode">000669</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">4.20</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.23</span><span class="subnote">2026-02-10</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="美丽生态"
+          data-code="000010"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="2.6"
+          data-first-close="3.98"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-10-23"
+        >
+          <td><a class="company-link" href="companies/000010_美丽生态.html">美丽生态</a><span class="subcode">000010</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">2.60</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.98</span><span class="subnote">2025-10-23</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST英飞拓"
+          data-code="002528"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="5.19"
+          data-first-close="3.79"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2026-03-31"
+        >
+          <td><a class="company-link" href="companies/002528_ST英飞拓.html">ST英飞拓</a><span class="subcode">002528</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">5.19</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.79</span><span class="subnote">2026-03-31</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="华夏幸福"
+          data-code="600340"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="1.1"
+          data-first-close="3.01"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-11-17"
+        >
+          <td><a class="company-link" href="companies/600340_华夏幸福.html">华夏幸福</a><span class="subcode">600340</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">1.10</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.01</span><span class="subnote">2025-11-17</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST华谊 / 华谊兄弟"
+          data-code="300027"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="1.95"
+          data-first-close="2.09"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2026-04-16"
+        >
+          <td><a class="company-link" href="companies/300027_ST华谊_华谊兄弟.html">ST华谊 / 华谊兄弟</a><span class="subcode">300027</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">1.95</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.09</span><span class="subnote">2026-04-16</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST百利"
+          data-code="603959"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="4.89"
+          data-first-close="1.91"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2024-09-10"
+        >
+          <td><a class="company-link" href="companies/603959_ST百利.html">ST百利</a><span class="subcode">603959</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">4.89</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.91</span><span class="subnote">2024-09-10</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST仕净"
+          data-code="301030"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="11.08"
+          data-first-close="10.81"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2026-04-28"
+        >
+          <td><a class="company-link" href="companies/301030__ST仕净.html">*ST仕净</a><span class="subcode">301030</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">11.08</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">10.81</span><span class="subnote">2026-04-28</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST炼石"
+          data-code="000697"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="12.35"
+          data-first-close="8.88"
+          data-completion-close="9.13"
+          data-completion-change="2.815315315315315"
+          data-first-date="2024-11-14"
+        >
+          <td><a class="company-link" href="companies/000697_ST炼石.html">ST炼石</a><span class="subcode">000697</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">12.35</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">8.88</span><span class="subnote">2024-11-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">9.13</span><span class="subnote">2025-12-15</span></div></td>
+          <td><span class="pct positive">+2.82%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST长药"
+          data-code="300391"
+          data-status="已退市"
+          data-status-rank="2"
+          data-latest-close="0.19"
+          data-first-close="4.98"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-01-22"
+        >
+          <td><a class="company-link" href="companies/300391__ST长药.html">*ST长药</a><span class="subcode">300391</span></td>
+          <td><span class="status-badge retired">已退市</span></td>
+          <td><div class="price-cell"><span class="price-value">0.19</span><span class="subnote">2026-04-10</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.98</span><span class="subnote">2025-01-22</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST瑞和"
+          data-code="002620"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="10.89"
+          data-first-close="3.51"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-02-18"
+        >
+          <td><a class="company-link" href="companies/002620_ST瑞和.html">ST瑞和</a><span class="subcode">002620</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">10.89</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.51</span><span class="subnote">2025-02-18</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST纳川"
+          data-code="300198"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="2.44"
+          data-first-close="2.35"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2024-01-23"
+        >
+          <td><a class="company-link" href="companies/300198_ST纳川.html">ST纳川</a><span class="subcode">300198</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">2.44</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.35</span><span class="subnote">2024-01-23</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST赛为"
+          data-code="300044"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="6.97"
+          data-first-close="6.55"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2020-06-01"
+        >
+          <td><a class="company-link" href="companies/300044_ST赛为.html">ST赛为</a><span class="subcode">300044</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">6.97</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">6.55</span><span class="subnote">2020-06-01</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="金通灵"
+          data-code="300091"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="3.02"
+          data-first-close="2.79"
+          data-completion-close="3.07"
+          data-completion-change="10.035842293906803"
+          data-first-date="2025-03-31"
+        >
+          <td><a class="company-link" href="companies/300091_金通灵.html">金通灵</a><span class="subcode">300091</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.02</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.79</span><span class="subnote">2025-03-31</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.07</span><span class="subnote">2026-02-24</span></div></td>
+          <td><span class="pct positive">+10.04%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST交投"
+          data-code="002200"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="7.84"
+          data-first-close="6.42"
+          data-completion-close="7.67"
+          data-completion-change="19.470404984423677"
+          data-first-date="2025-04-24"
+        >
+          <td><a class="company-link" href="companies/002200__ST交投.html">*ST交投</a><span class="subcode">002200</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">7.84</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">6.42</span><span class="subnote">2025-04-24</span></div></td>
+          <td><div class="price-cell"><span class="price-value">7.67</span><span class="subnote">2025-12-26</span></div></td>
+          <td><span class="pct positive">+19.47%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST三圣"
+          data-code="002742"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="4.8"
+          data-first-close="4.61"
+          data-completion-close="4.62"
+          data-completion-change="0.21691973969630773"
+          data-first-date="2024-11-19"
+        >
+          <td><a class="company-link" href="companies/002742__ST三圣.html">*ST三圣</a><span class="subcode">002742</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">4.80</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.61</span><span class="subnote">2024-11-19</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.62</span><span class="subnote">2025-12-29</span></div></td>
+          <td><span class="pct positive">+0.22%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST新研"
+          data-code="300159"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="4.11"
+          data-first-close="2.52"
+          data-completion-close="3.18"
+          data-completion-change="26.190476190476197"
+          data-first-date="2025-06-09"
+        >
+          <td><a class="company-link" href="companies/300159__ST新研.html">*ST新研</a><span class="subcode">300159</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">4.11</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.52</span><span class="subnote">2025-06-09</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.18</span><span class="subnote">2025-12-31</span></div></td>
+          <td><span class="pct positive">+26.19%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST新元"
+          data-code="300472"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="9.23"
+          data-first-close="4.94"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-07-07"
+        >
+          <td><a class="company-link" href="companies/300472__ST新元.html">*ST新元</a><span class="subcode">300472</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">9.23</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.94</span><span class="subnote">2025-07-07</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST东时"
+          data-code="603377"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="3.63"
+          data-first-close="3.1"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-08-19"
+        >
+          <td><a class="company-link" href="companies/603377_ST东时.html">ST东时</a><span class="subcode">603377</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.63</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.10</span><span class="subnote">2025-08-19</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST亚太"
+          data-code="000691"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="8.48"
+          data-first-close="4.94"
+          data-completion-close="7.4"
+          data-completion-change="49.797570850202426"
+          data-first-date="2023-08-30"
+        >
+          <td><a class="company-link" href="companies/000691__ST亚太.html">*ST亚太</a><span class="subcode">000691</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">8.48</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.94</span><span class="subnote">2023-08-30</span></div></td>
+          <td><div class="price-cell"><span class="price-value">7.40</span><span class="subnote">2026-01-05</span></div></td>
+          <td><span class="pct positive">+49.80%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST中基"
+          data-code="000972"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="3.81"
+          data-first-close="3.29"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-07-29"
+        >
+          <td><a class="company-link" href="companies/000972__ST中基.html">*ST中基</a><span class="subcode">000972</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.81</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.29</span><span class="subnote">2025-07-29</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="启迪环境"
+          data-code="000826"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="2.3"
+          data-first-close="7.15"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2020-12-16"
+        >
+          <td><a class="company-link" href="companies/000826_启迪环境.html">启迪环境</a><span class="subcode">000826</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">2.30</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">7.15</span><span class="subnote">2020-12-16</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="天宜新材"
+          data-code="688033"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="8.78"
+          data-first-close="6.4"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-11-10"
+        >
+          <td><a class="company-link" href="companies/688033_天宜新材.html">天宜新材</a><span class="subcode">688033</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">8.78</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">6.40</span><span class="subnote">2025-11-10</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST沐邦"
+          data-code="603398"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="14.24"
+          data-first-close="8.61"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-11-17"
+        >
+          <td><a class="company-link" href="companies/603398__ST沐邦.html">*ST沐邦</a><span class="subcode">603398</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">14.24</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">8.61</span><span class="subnote">2025-11-17</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST正平"
+          data-code="603843"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="9.09"
+          data-first-close="4.73"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2025-12-25"
+        >
+          <td><a class="company-link" href="companies/603843__ST正平.html">*ST正平</a><span class="subcode">603843</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">9.09</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.73</span><span class="subnote">2025-12-25</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST金科"
+          data-code="000656"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="1.42"
+          data-first-close="1.14"
+          data-completion-close="1.55"
+          data-completion-change="35.964912280701775"
+          data-first-date="2024-04-24"
+        >
+          <td><a class="company-link" href="companies/000656__ST金科.html">*ST金科</a><span class="subcode">000656</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">1.42</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.14</span><span class="subnote">2024-04-24</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.55</span><span class="subnote">2025-12-16</span></div></td>
+          <td><span class="pct positive">+35.96%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST红阳"
+          data-code="000525"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="5.25"
+          data-first-close="3.94"
+          data-completion-close="8.62"
+          data-completion-change="118.78172588832487"
+          data-first-date="2021-06-02"
+        >
+          <td><a class="company-link" href="companies/000525__ST红阳.html">*ST红阳</a><span class="subcode">000525</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">5.25</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.94</span><span class="subnote">2021-06-02</span></div></td>
+          <td><div class="price-cell"><span class="price-value">8.62</span><span class="subnote">2024-12-13</span></div></td>
+          <td><span class="pct positive">+118.78%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST花王"
+          data-code="603007"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="9.26"
+          data-first-close="2.64"
+          data-completion-close="10.56"
+          data-completion-change="300"
+          data-first-date="2022-04-29"
+        >
+          <td><a class="company-link" href="companies/603007__ST花王.html">*ST花王</a><span class="subcode">603007</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">9.26</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.64</span><span class="subnote">2022-04-29</span></div></td>
+          <td><div class="price-cell"><span class="price-value">10.56</span><span class="subnote">2025-01-02</span></div></td>
+          <td><span class="pct positive">+300.00%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST有树"
+          data-code="300209"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="26.35"
+          data-first-close="3.34"
+          data-completion-close="5.72"
+          data-completion-change="71.25748502994011"
+          data-first-date="2023-08-21"
+        >
+          <td><a class="company-link" href="companies/300209__ST有树.html">*ST有树</a><span class="subcode">300209</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">26.35</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.34</span><span class="subnote">2023-08-21</span></div></td>
+          <td><div class="price-cell"><span class="price-value">5.72</span><span class="subnote">2024-12-27</span></div></td>
+          <td><span class="pct positive">+71.26%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST文投"
+          data-code="600715"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="2"
+          data-first-close="1.45"
+          data-completion-close="2.3"
+          data-completion-change="58.620689655172406"
+          data-first-date="2024-07-15"
+        >
+          <td><a class="company-link" href="companies/600715__ST文投.html">*ST文投</a><span class="subcode">600715</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">2.00</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.45</span><span class="subnote">2024-07-15</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.30</span><span class="subnote">2024-12-24</span></div></td>
+          <td><span class="pct positive">+58.62%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST合泰"
+          data-code="002217"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="3.36"
+          data-first-close="1.22"
+          data-completion-close="2.27"
+          data-completion-change="86.06557377049181"
+          data-first-date="2024-07-29"
+        >
+          <td><a class="company-link" href="companies/002217__ST合泰.html">*ST合泰</a><span class="subcode">002217</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.36</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.22</span><span class="subnote">2024-07-29</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.27</span><span class="subnote">2025-01-02</span></div></td>
+          <td><span class="pct positive">+86.07%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST东园"
+          data-code="002310"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="3.21"
+          data-first-close="2.33"
+          data-completion-close="1.88"
+          data-completion-change="-19.31330472103005"
+          data-first-date="2024-12-02"
+        >
+          <td><a class="company-link" href="companies/002310__ST东园.html">*ST东园</a><span class="subcode">002310</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.21</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.33</span><span class="subnote">2024-12-02</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.88</span><span class="subnote">2024-12-31</span></div></td>
+          <td><span class="pct negative">-19.31%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST中利"
+          data-code="002309"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="5.17"
+          data-first-close="4.31"
+          data-completion-close="2.56"
+          data-completion-change="-40.60324825986078"
+          data-first-date="2023-08-17"
+        >
+          <td><a class="company-link" href="companies/002309__ST中利.html">*ST中利</a><span class="subcode">002309</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">5.17</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.31</span><span class="subnote">2023-08-17</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.56</span><span class="subnote">2025-01-09</span></div></td>
+          <td><span class="pct negative">-40.60%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST汉马"
+          data-code="600375"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="4.98"
+          data-first-close="8.58"
+          data-completion-close="5.51"
+          data-completion-change="-35.78088578088578"
+          data-first-date="2022-07-27"
+        >
+          <td><a class="company-link" href="companies/600375__ST汉马.html">*ST汉马</a><span class="subcode">600375</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">4.98</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">8.58</span><span class="subnote">2022-07-27</span></div></td>
+          <td><div class="price-cell"><span class="price-value">5.51</span><span class="subnote">2024-12-31</span></div></td>
+          <td><span class="pct negative">-35.78%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST傲农"
+          data-code="603363"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="3.18"
+          data-first-close="3.55"
+          data-completion-close="3.54"
+          data-completion-change="-0.28169014084506444"
+          data-first-date="2024-09-30"
+        >
+          <td><a class="company-link" href="companies/603363__ST傲农.html">*ST傲农</a><span class="subcode">603363</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.18</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.55</span><span class="subnote">2024-09-30</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.54</span><span class="subnote">2024-12-31</span></div></td>
+          <td><span class="pct negative">-0.28%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST通脉"
+          data-code="603559"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="9.59"
+          data-first-close="3.91"
+          data-completion-close="9.08"
+          data-completion-change="132.22506393861892"
+          data-first-date="2024-06-20"
+        >
+          <td><a class="company-link" href="companies/603559__ST通脉.html">*ST通脉</a><span class="subcode">603559</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">9.59</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.91</span><span class="subnote">2024-06-20</span></div></td>
+          <td><div class="price-cell"><span class="price-value">9.08</span><span class="subnote">2024-12-31</span></div></td>
+          <td><span class="pct positive">+132.23%</span></td>
+        </tr>
+      
+        <tr
+          data-company="仁东控股"
+          data-code="002647"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="12.42"
+          data-first-close="3.31"
+          data-completion-close="6.26"
+          data-completion-change="89.1238670694864"
+          data-first-date="2024-07-05"
+        >
+          <td><a class="company-link" href="companies/002647_仁东控股.html">仁东控股</a><span class="subcode">002647</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">12.42</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.31</span><span class="subnote">2024-07-05</span></div></td>
+          <td><div class="price-cell"><span class="price-value">6.26</span><span class="subnote">2025-03-21</span></div></td>
+          <td><span class="pct positive">+89.12%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST正邦"
+          data-code="002157"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="3.46"
+          data-first-close="4.47"
+          data-completion-close="3.32"
+          data-completion-change="-25.727069351230426"
+          data-first-date="2022-12-27"
+        >
+          <td><a class="company-link" href="companies/002157__ST正邦.html">*ST正邦</a><span class="subcode">002157</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.46</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.47</span><span class="subnote">2022-12-27</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.32</span><span class="subnote">2025-12-29</span></div></td>
+          <td><span class="pct negative">-25.73%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST新联"
+          data-code="000620"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="3.09"
+          data-first-close="2.44"
+          data-completion-close="1.8"
+          data-completion-change="-26.22950819672131"
+          data-first-date="2022-08-08"
+        >
+          <td><a class="company-link" href="companies/000620__ST新联.html">*ST新联</a><span class="subcode">000620</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.09</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.44</span><span class="subnote">2022-08-08</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.80</span><span class="subnote">2024-01-02</span></div></td>
+          <td><span class="pct negative">-26.23%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST京蓝"
+          data-code="000711"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="6.23"
+          data-first-close="1.99"
+          data-completion-close="2.04"
+          data-completion-change="2.5125628140703538"
+          data-first-date="2023-11-13"
+        >
+          <td><a class="company-link" href="companies/000711__ST京蓝.html">*ST京蓝</a><span class="subcode">000711</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">6.23</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.99</span><span class="subnote">2023-11-13</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.04</span><span class="subnote">2023-12-27</span></div></td>
+          <td><span class="pct positive">+2.51%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST中捷"
+          data-code="002021"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="3.12"
+          data-first-close="2.24"
+          data-completion-close="2.53"
+          data-completion-change="12.946428571428553"
+          data-first-date="2020-01-22"
+        >
+          <td><a class="company-link" href="companies/002021__ST中捷.html">*ST中捷</a><span class="subcode">002021</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.12</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.24</span><span class="subnote">2020-01-22</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.53</span><span class="subnote">2024-01-02</span></div></td>
+          <td><span class="pct positive">+12.95%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST西钢"
+          data-code="600117"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="2.46"
+          data-first-close="2.83"
+          data-completion-close="3.17"
+          data-completion-change="12.01413427561837"
+          data-first-date="2023-05-29"
+        >
+          <td><a class="company-link" href="companies/600117__ST西钢.html">*ST西钢</a><span class="subcode">600117</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">2.46</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.83</span><span class="subnote">2023-05-29</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.17</span><span class="subnote">2024-01-03</span></div></td>
+          <td><span class="pct positive">+12.01%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST洲际"
+          data-code="600759"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="3.27"
+          data-first-close="2.4"
+          data-completion-close="2.48"
+          data-completion-change="3.3333333333333366"
+          data-first-date="2023-05-30"
+        >
+          <td><a class="company-link" href="companies/600759__ST洲际.html">*ST洲际</a><span class="subcode">600759</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.27</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.40</span><span class="subnote">2023-05-30</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.48</span><span class="subnote">2024-01-03</span></div></td>
+          <td><span class="pct positive">+3.33%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST全筑"
+          data-code="603030"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="2.9"
+          data-first-close="2.85"
+          data-completion-close="2.8"
+          data-completion-change="-1.75438596491229"
+          data-first-date="2022-12-12"
+        >
+          <td><a class="company-link" href="companies/603030__ST全筑.html">*ST全筑</a><span class="subcode">603030</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">2.90</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.85</span><span class="subnote">2022-12-12</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.80</span><span class="subnote">2024-01-03</span></div></td>
+          <td><span class="pct negative">-1.75%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST凯撒"
+          data-code="000796"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="4.67"
+          data-first-close="4.03"
+          data-completion-close="3.95"
+          data-completion-change="-1.985111662531019"
+          data-first-date="2023-09-13"
+        >
+          <td><a class="company-link" href="companies/000796__ST凯撒.html">*ST凯撒</a><span class="subcode">000796</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">4.67</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.03</span><span class="subnote">2023-09-13</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.95</span><span class="subnote">2024-01-02</span></div></td>
+          <td><span class="pct negative">-1.99%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST东洋"
+          data-code="002086"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="1.89"
+          data-first-close="2.71"
+          data-completion-close="2.78"
+          data-completion-change="2.583025830258297"
+          data-first-date="2023-04-25"
+        >
+          <td><a class="company-link" href="companies/002086__ST东洋.html">*ST东洋</a><span class="subcode">002086</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">1.89</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.71</span><span class="subnote">2023-04-25</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.78</span><span class="subnote">2024-01-02</span></div></td>
+          <td><span class="pct positive">+2.58%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST榕泰"
+          data-code="600589"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="13.18"
+          data-first-close="4.6"
+          data-completion-close="3.35"
+          data-completion-change="-27.173913043478255"
+          data-first-date="2023-11-08"
+        >
+          <td><a class="company-link" href="companies/600589__ST榕泰.html">*ST榕泰</a><span class="subcode">600589</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">13.18</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.60</span><span class="subnote">2023-11-08</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.35</span><span class="subnote">2024-01-02</span></div></td>
+          <td><span class="pct negative">-27.17%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST明诚"
+          data-code="600136"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="1.69"
+          data-first-close="2.33"
+          data-completion-close="2.25"
+          data-completion-change="-3.433476394849788"
+          data-first-date="2023-01-10"
+        >
+          <td><a class="company-link" href="companies/600136__ST明诚.html">*ST明诚</a><span class="subcode">600136</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">1.69</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.33</span><span class="subnote">2023-01-10</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.25</span><span class="subnote">2024-01-03</span></div></td>
+          <td><span class="pct negative">-3.43%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST商城"
+          data-code="600306"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="0.29"
+          data-first-close="11.24"
+          data-completion-close="10.92"
+          data-completion-change="-2.8469750889679744"
+          data-first-date="2023-11-14"
+        >
+          <td><a class="company-link" href="companies/600306__ST商城.html">*ST商城</a><span class="subcode">600306</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">0.29</span><span class="subnote">2024-06-19</span></div></td>
+          <td><div class="price-cell"><span class="price-value">11.24</span><span class="subnote">2023-11-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">10.92</span><span class="subnote">2024-01-03</span></div></td>
+          <td><span class="pct negative">-2.85%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST广田"
+          data-code="002482"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="1.62"
+          data-first-close="1.98"
+          data-completion-close="2"
+          data-completion-change="1.010101010101011"
+          data-first-date="2023-02-28"
+        >
+          <td><a class="company-link" href="companies/002482__ST广田.html">*ST广田</a><span class="subcode">002482</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">1.62</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.98</span><span class="subnote">2023-02-28</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.00</span><span class="subnote">2023-12-25</span></div></td>
+          <td><span class="pct positive">+1.01%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST金一"
+          data-code="002721"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="2.89"
+          data-first-close="3.34"
+          data-completion-close="3.07"
+          data-completion-change="-8.083832335329342"
+          data-first-date="2023-02-01"
+        >
+          <td><a class="company-link" href="companies/002721__ST金一.html">*ST金一</a><span class="subcode">002721</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">2.89</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.34</span><span class="subnote">2023-02-01</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.07</span><span class="subnote">2023-11-30</span></div></td>
+          <td><span class="pct negative">-8.08%</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST西发"
+          data-code="000752"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="9.13"
+          data-first-close="4.54"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2022-01-27"
+        >
+          <td><a class="company-link" href="companies/000752_ST西发.html">ST西发</a><span class="subcode">000752</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">9.13</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.54</span><span class="subnote">2022-01-27</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="ST步步高"
+          data-code="002251"
+          data-status="重整完成"
+          data-status-rank="1"
+          data-latest-close="3.92"
+          data-first-close="4.71"
+          data-completion-close="2.97"
+          data-completion-change="-36.94267515923567"
+          data-first-date="2023-12-04"
+        >
+          <td><a class="company-link" href="companies/002251_ST步步高.html">ST步步高</a><span class="subcode">002251</span></td>
+          <td><span class="status-badge done">重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">3.92</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.71</span><span class="subnote">2023-12-04</span></div></td>
+          <td><div class="price-cell"><span class="price-value">2.97</span><span class="subnote">2024-09-30</span></div></td>
+          <td><span class="pct negative">-36.94%</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST搜特"
+          data-code="002503"
+          data-status="已退市"
+          data-status-rank="2"
+          data-latest-close="0.42"
+          data-first-close="1.6"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2022-03-02"
+        >
+          <td><a class="company-link" href="companies/002503__ST搜特.html">*ST搜特</a><span class="subcode">002503</span></td>
+          <td><span class="status-badge retired">已退市</span></td>
+          <td><div class="price-cell"><span class="price-value">0.42</span><span class="subnote">2023-05-22</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.60</span><span class="subnote">2022-03-02</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="蓝盾退"
+          data-code="300297"
+          data-status="已退市"
+          data-status-rank="2"
+          data-latest-close="0.23"
+          data-first-close="3.85"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2021-03-30"
+        >
+          <td><a class="company-link" href="companies/300297_蓝盾退.html">蓝盾退</a><span class="subcode">300297</span></td>
+          <td><span class="status-badge retired">已退市</span></td>
+          <td><div class="price-cell"><span class="price-value">0.23</span><span class="subnote">2023-07-28</span></div></td>
+          <td><div class="price-cell"><span class="price-value">3.85</span><span class="subnote">2021-03-30</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="文化退"
+          data-code="300089"
+          data-status="已退市"
+          data-status-rank="2"
+          data-latest-close="0.19"
+          data-first-close="5.38"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2021-01-11"
+        >
+          <td><a class="company-link" href="companies/300089_文化退.html">文化退</a><span class="subcode">300089</span></td>
+          <td><span class="status-badge retired">已退市</span></td>
+          <td><div class="price-cell"><span class="price-value">0.19</span><span class="subnote">2023-07-12</span></div></td>
+          <td><div class="price-cell"><span class="price-value">5.38</span><span class="subnote">2021-01-11</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="奇信退"
+          data-code="002781"
+          data-status="已退市"
+          data-status-rank="2"
+          data-latest-close="0.42"
+          data-first-close="4.74"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2022-07-18"
+        >
+          <td><a class="company-link" href="companies/002781_奇信退.html">奇信退</a><span class="subcode">002781</span></td>
+          <td><span class="status-badge retired">已退市</span></td>
+          <td><div class="price-cell"><span class="price-value">0.42</span><span class="subnote">2023-07-04</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.74</span><span class="subnote">2022-07-18</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST泛海"
+          data-code="000046"
+          data-status="已退市"
+          data-status-rank="2"
+          data-latest-close="0.38"
+          data-first-close="0.91"
+          data-completion-close="0.88"
+          data-completion-change="-3.2967032967032996"
+          data-first-date="2023-04-25"
+        >
+          <td><a class="company-link" href="companies/000046__ST泛海.html">*ST泛海</a><span class="subcode">000046</span></td>
+          <td><span class="status-badge retired">已退市</span></td>
+          <td><div class="price-cell"><span class="price-value">0.38</span><span class="subnote">2023-12-27</span></div></td>
+          <td><div class="price-cell"><span class="price-value">0.91</span><span class="subnote">2023-04-25</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct negative">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST佳沃"
+          data-code="300268"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="14.58"
+          data-first-close="17.3"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2023-08-07"
+        >
+          <td><a class="company-link" href="companies/300268__ST佳沃.html">*ST佳沃</a><span class="subcode">300268</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">14.58</span><span class="subnote">2026-05-14</span></div></td>
+          <td><div class="price-cell"><span class="price-value">17.30</span><span class="subnote">2023-08-07</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST天润"
+          data-code="002113"
+          data-status="未重整完成"
+          data-status-rank="0"
+          data-latest-close="0.41"
+          data-first-close="1.05"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2023-05-12"
+        >
+          <td><a class="company-link" href="companies/002113__ST天润.html">*ST天润</a><span class="subcode">002113</span></td>
+          <td><span class="status-badge open">未重整完成</span></td>
+          <td><div class="price-cell"><span class="price-value">0.41</span><span class="subnote">2023-06-12</span></div></td>
+          <td><div class="price-cell"><span class="price-value">1.05</span><span class="subnote">2023-05-12</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+        <tr
+          data-company="*ST爱迪 / 爱迪退"
+          data-code="002740"
+          data-status="已退市"
+          data-status-rank="2"
+          data-latest-close="0.38"
+          data-first-close="4"
+          data-completion-close=""
+          data-completion-change=""
+          data-first-date="2021-07-30"
+        >
+          <td><a class="company-link" href="companies/002740__ST爱迪_爱迪退.html">*ST爱迪 / 爱迪退</a><span class="subcode">002740</span></td>
+          <td><span class="status-badge retired">已退市</span></td>
+          <td><div class="price-cell"><span class="price-value">0.38</span><span class="subnote">2024-01-19</span></div></td>
+          <td><div class="price-cell"><span class="price-value">4.00</span><span class="subnote">2021-07-30</span></div></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
