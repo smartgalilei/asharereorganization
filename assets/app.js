@@ -1,8 +1,13 @@
 
 const searchInput = document.getElementById("companySearch");
 const statusFilter = document.getElementById("statusFilter");
+const caseTagFilter = document.getElementById("caseTagFilter");
+const sourceFilter = document.getElementById("sourceFilter");
 const sortBy = document.getElementById("sortBy");
 const hasCompletionOnly = document.getElementById("hasCompletionOnly");
+const listedEntityOnly = document.getElementById("listedEntityOnly");
+const announcementOnly = document.getElementById("announcementOnly");
+const missingAnnouncementOnly = document.getElementById("missingAnnouncementOnly");
 const tableMeta = document.getElementById("tableMeta");
 const table = document.getElementById("companyTable");
 
@@ -45,7 +50,12 @@ function applyFilters() {
   if (!table) return;
   const query = (searchInput?.value || "").trim().toLowerCase();
   const status = statusFilter?.value || "全部";
+  const caseTag = caseTagFilter?.value || "全部";
+  const source = sourceFilter?.value || "全部";
   const completionOnly = Boolean(hasCompletionOnly?.checked);
+  const listedOnly = Boolean(listedEntityOnly?.checked);
+  const announcementOnlyChecked = Boolean(announcementOnly?.checked);
+  const missingOnlyChecked = Boolean(missingAnnouncementOnly?.checked);
   const rows = Array.from(table.tBodies[0].rows);
   sortRows(rows);
   rows.forEach((row) => table.tBodies[0].appendChild(row));
@@ -54,11 +64,20 @@ function applyFilters() {
   for (const row of rows) {
     const text = row.cells[0].innerText.toLowerCase();
     const rowStatus = row.dataset.status || row.cells[1].innerText.trim();
+    const rowSource = row.dataset.source || "";
     const hasCompletion = rowStatus === "重整完成";
+    const isListedEntity = row.dataset.listedEntity === "1";
+    const hasAnnouncement = row.dataset.hasAnnouncements === "1";
+    const tags = (row.dataset.caseTags || "").split("|").filter(Boolean);
     const matchQuery = !query || text.includes(query);
     const matchStatus = status === "全部" || rowStatus.includes(status);
+    const matchTag = caseTag === "全部" || tags.includes(caseTag);
+    const matchSource = source === "全部" || rowSource === source;
     const matchCompletionOnly = !completionOnly || hasCompletion;
-    const matched = matchQuery && matchStatus && matchCompletionOnly;
+    const matchListedOnly = !listedOnly || isListedEntity;
+    const matchAnnouncementOnly = !announcementOnlyChecked || hasAnnouncement;
+    const matchMissingOnly = !missingOnlyChecked || !hasAnnouncement;
+    const matched = matchQuery && matchStatus && matchTag && matchSource && matchCompletionOnly && matchListedOnly && matchAnnouncementOnly && matchMissingOnly;
     row.style.display = matched ? "" : "none";
     if (matched) visible += 1;
   }
@@ -70,8 +89,13 @@ function applyFilters() {
 
 searchInput?.addEventListener("input", applyFilters);
 statusFilter?.addEventListener("change", applyFilters);
+caseTagFilter?.addEventListener("change", applyFilters);
+sourceFilter?.addEventListener("change", applyFilters);
 sortBy?.addEventListener("change", applyFilters);
 hasCompletionOnly?.addEventListener("change", applyFilters);
+listedEntityOnly?.addEventListener("change", applyFilters);
+announcementOnly?.addEventListener("change", applyFilters);
+missingAnnouncementOnly?.addEventListener("change", applyFilters);
 applyFilters();
 
 const tooltip = document.getElementById("chartTooltip");

@@ -168,6 +168,23 @@ select {
   height: 16px;
 }
 
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(53, 92, 125, 0.10);
+  color: #355c7d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .table-wrap {
   overflow: auto;
 }
@@ -227,6 +244,21 @@ a:hover {
 .status-badge.done {
   background: rgba(22, 122, 74, 0.12);
   color: var(--green);
+}
+
+.status-badge.failed {
+  background: rgba(194, 59, 47, 0.12);
+  color: var(--red);
+}
+
+.status-badge.potential {
+  background: rgba(53, 92, 125, 0.12);
+  color: #355c7d;
+}
+
+.status-badge.watch {
+  background: rgba(116, 96, 43, 0.12);
+  color: #74602b;
 }
 
 .status-badge.open {
@@ -293,6 +325,45 @@ a:hover {
   display: block;
   font-size: 30px;
   font-family: "Noto Serif SC", serif;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.case-metric {
+  padding: 16px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fffaf3 0%, #faf4eb 100%);
+  border: 1px solid rgba(159, 79, 44, 0.08);
+}
+
+.case-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.case-metric strong {
+  display: block;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  word-break: break-word;
+}
+
+.case-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.notes-list {
+  display: grid;
+  gap: 12px;
 }
 
 .chart-card {
@@ -399,7 +470,8 @@ circle {
 
 @media (max-width: 960px) {
   .summary-bar,
-  .metric-grid {
+  .metric-grid,
+  .case-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -425,7 +497,8 @@ circle {
   }
 
   .summary-bar,
-  .metric-grid {
+  .metric-grid,
+  .case-grid {
     grid-template-columns: 1fr;
   }
 }
