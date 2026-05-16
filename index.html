@@ -17,7 +17,7 @@
       <div class="hero-actions">
         <input id="companySearch" type="search" placeholder="搜索公司名称或代码" />
         <select id="statusFilter">
-          <option value="全部">全部状态</option><option value="未重整完成">未重整完成</option><option value="重整完成">重整完成</option><option value="已退市">已退市</option><option value="观察池">观察池</option>
+          <option value="全部">全部状态</option><option value="未重整完成">未重整完成</option><option value="重整完成">重整完成</option><option value="已退市">已退市</option><option value="观察池">观察池</option><option value="重整失败">重整失败</option>
         </select>
         <select id="caseTagFilter">
           <option value="全部">全部标签</option><option value="公告主库">公告主库</option><option value="财务投资人">财务投资人</option><option value="产业投资人">产业投资人</option><option value="失败案例">失败案例</option><option value="潜在项目库">潜在项目库</option><option value="资不抵债上市公司">资不抵债上市公司</option><option value="连续三年亏损">连续三年亏损</option>
@@ -1425,8 +1425,8 @@
           data-listed-entity="1"
           data-latest-close="0.38"
           data-first-close="0.91"
-          data-completion-close="0.88"
-          data-completion-change="-3.2967032967032996"
+          data-completion-close=""
+          data-completion-change=""
           data-first-date="2023-04-25"
         >
           <td><a class="company-link" href="companies/000046__ST泛海.html">*ST泛海</a><span class="subcode">000046</span></td>
@@ -1435,7 +1435,7 @@
           <td><div class="price-cell"><span class="price-value">0.38</span><span class="subnote">2023-12-27</span></div></td>
           <td><div class="price-cell"><span class="price-value">0.91</span><span class="subnote">2023-04-25</span></div></td>
           <td><span class="subnote">--</span></td>
-          <td><span class="pct negative">--</span></td>
+          <td><span class="pct neutral">--</span></td>
         </tr>
       
         <tr
@@ -3265,9 +3265,9 @@
         <tr
           data-company="*ST洪涛"
           data-code="002325"
-          data-status="未重整完成"
+          data-status="重整失败"
           data-source="案例库新增"
-          data-status-rank="0"
+          data-status-rank="2"
           data-case-tags="失败案例"
           data-has-announcements="1"
           data-listed-entity="1"
@@ -3278,7 +3278,7 @@
           data-first-date="2024-01-30"
         >
           <td><a class="company-link" href="companies/002325_-ST洪涛.html">*ST洪涛</a><span class="subcode">002325</span></td>
-          <td><span class="status-badge open">未重整完成</span></td>
+          <td><span class="status-badge failed">重整失败</span></td>
           <td><div class="tag-row"><span class="tag-chip">失败案例</span></div></td>
           <td><div class="price-cell"><span class="price-value">0.38</span><span class="subnote">2024-06-28</span></div></td>
           <td><div class="price-cell"><span class="price-value">1.47</span><span class="subnote">2024-01-30</span></div></td>
@@ -5017,25 +5017,25 @@
         <tr
           data-company="*ST吉药"
           data-code="300108"
-          data-status="重整完成"
+          data-status="重整失败"
           data-source="案例库新增"
-          data-status-rank="1"
+          data-status-rank="2"
           data-case-tags="潜在项目库|资不抵债上市公司|连续三年亏损"
           data-has-announcements="1"
           data-listed-entity="1"
           data-latest-close="0.21"
           data-first-close="2.34"
-          data-completion-close="1.06"
-          data-completion-change="-54.7008547008547"
+          data-completion-close=""
+          data-completion-change=""
           data-first-date="2022-08-16"
         >
           <td><a class="company-link" href="companies/300108_-ST吉药.html">*ST吉药</a><span class="subcode">300108</span></td>
-          <td><span class="status-badge done">重整完成</span></td>
+          <td><span class="status-badge failed">重整失败</span></td>
           <td><div class="tag-row"><span class="tag-chip">潜在项目库</span><span class="tag-chip">资不抵债上市公司</span><span class="tag-chip">连续三年亏损</span></div></td>
           <td><div class="price-cell"><span class="price-value">0.21</span><span class="subnote">2025-04-23</span></div></td>
           <td><div class="price-cell"><span class="price-value">2.34</span><span class="subnote">2022-08-16</span></div></td>
-          <td><div class="price-cell"><span class="price-value">1.06</span><span class="subnote">2025-03-06</span></div></td>
-          <td><span class="pct negative">-54.70%</span></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
         </tr>
       
         <tr
@@ -5097,8 +5097,8 @@
           data-listed-entity="1"
           data-latest-close="10.29"
           data-first-close="11.87"
-          data-completion-close="7.39"
-          data-completion-change="-37.74220724515585"
+          data-completion-close="7.63"
+          data-completion-change="-35.72030328559393"
           data-first-date="2020-06-03"
         >
           <td><a class="company-link" href="companies/300125_ST聆达.html">ST聆达</a><span class="subcode">300125</span></td>
@@ -5106,8 +5106,8 @@
           <td><div class="tag-row"><span class="tag-chip">潜在项目库</span><span class="tag-chip">资不抵债上市公司</span><span class="tag-chip">连续三年亏损</span></div></td>
           <td><div class="price-cell"><span class="price-value">10.29</span><span class="subnote">2026-05-15</span></div></td>
           <td><div class="price-cell"><span class="price-value">11.87</span><span class="subnote">2020-06-03</span></div></td>
-          <td><div class="price-cell"><span class="price-value">7.39</span><span class="subnote">2026-01-05</span></div></td>
-          <td><span class="pct negative">-37.74%</span></td>
+          <td><div class="price-cell"><span class="price-value">7.63</span><span class="subnote">2025-12-31</span></div></td>
+          <td><span class="pct negative">-35.72%</span></td>
         </tr>
       
         <tr
@@ -6241,25 +6241,25 @@
         <tr
           data-company="*ST美尚"
           data-code="300495"
-          data-status="重整完成"
+          data-status="重整失败"
           data-source="案例库新增"
-          data-status-rank="1"
+          data-status-rank="2"
           data-case-tags="失败案例"
           data-has-announcements="1"
           data-listed-entity="1"
           data-latest-close="0.13"
           data-first-close="3.52"
-          data-completion-close="0.18"
-          data-completion-change="-94.88636363636364"
+          data-completion-close=""
+          data-completion-change=""
           data-first-date="2022-10-12"
         >
           <td><a class="company-link" href="companies/300495_-ST美尚.html">*ST美尚</a><span class="subcode">300495</span></td>
-          <td><span class="status-badge done">重整完成</span></td>
+          <td><span class="status-badge failed">重整失败</span></td>
           <td><div class="tag-row"><span class="tag-chip">失败案例</span></div></td>
           <td><div class="price-cell"><span class="price-value">0.13</span><span class="subnote">2024-05-08</span></div></td>
           <td><div class="price-cell"><span class="price-value">3.52</span><span class="subnote">2022-10-12</span></div></td>
-          <td><div class="price-cell"><span class="price-value">0.18</span><span class="subnote">2024-04-30</span></div></td>
-          <td><span class="pct negative">-94.89%</span></td>
+          <td><span class="subnote">--</span></td>
+          <td><span class="pct neutral">--</span></td>
         </tr>
       
         <tr
